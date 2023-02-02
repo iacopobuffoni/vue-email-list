@@ -15,8 +15,7 @@
     <body>
 
         <div class="" id="app">
-            <button @click="getEmail()"> OK </button>
-            <ul>
+            <ul v-if="show == true">
                 <li v-for="email in emails">
                     {{ email }}
                 </li>

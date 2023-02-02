@@ -4,8 +4,7 @@ createApp({
     data() {
       return {
         emails: [],
-        display : false,
-        number : 10
+        show : false
       }
     },
     methods: {
@@ -19,11 +18,21 @@ createApp({
                         console.log(resp.data);
                         console.log(resp.data.response);
                         this.emails.push(resp.data.response)
+                        if (this.emails.length == 10) {
+                            this.show = true
+        
+                        }
 
                     }
                 )
+                
             }
             
+            
         }
+    },
+    created () { 
+        this.getEmail()
+        
     }
 }).mount('#app')
